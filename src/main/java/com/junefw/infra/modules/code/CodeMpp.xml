@@ -14,21 +14,19 @@
 			,a.ifcgName
 			,a.ifcgDelNy
 		FROM 
-			kbook.infrCodeGroup a
+			infrCodeGroup a
 		WHERE 1=1
 			AND ifcgDelNy=0
 
 	</select>
 	
-	<insert id="insert" >
-			insert into kbMember(
-				kbmmId
-				,kbmmName
-				,kbmmDelNy
-			) values(
-				#{kbmmId}
-				,#{kbmmName}
-				,0
-			)
+	<insert id="insert">
+		INSERT INTO infrCodeGroup(
+			ifcgName
+			,ifcgDelNy
+		) VALUES (
+			#{ifcgName}
+			,0		
+		)		
 	</insert>
 </mapper>
