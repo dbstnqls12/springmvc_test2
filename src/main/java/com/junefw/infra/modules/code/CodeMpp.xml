@@ -41,6 +41,17 @@
 			AND ifcgSeq=#{ifcgSeq}
 
 	</select>
+
+	<update id="update">
+		UPDATE infrCodeGroup SET(	
+			ifcgSeq=""
+			,ifcgName=""
+			,ifcgDelNy=""
+		)	
+		WHERE 1=1
+			AND ifcgSeq=#{ifcgSeq}
+
+	</update>
 	
 
 </mapper>

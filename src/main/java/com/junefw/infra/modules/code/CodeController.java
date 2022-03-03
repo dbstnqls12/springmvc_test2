@@ -51,6 +51,25 @@ public class CodeController {
 		return "code/codeGroupView";
 	}
 	
+	
+//	수정
+	@RequestMapping(value = "/code/codeGroupEditForm")
+	public String codeGroupEditForm(Code vo, Model model) throws Exception {
+	
+		//디비까지 가서 한 건의 데이터값을 가지고 온다.
+		Code rt = service.update(vo);
+		
+		//가지고 온 값을 jsp로 넘겨준다
+		return "code/codeGroupEditForm";
+	}
+
+	@RequestMapping(value = "/code/codeGroupUpdt")
+	public String codeGroupUpdt(Code dto, Model model) throws Exception {
+
+		//수정진행
+		return "code/codeGroupUpdt";
+	}
+	
 
 
 	
