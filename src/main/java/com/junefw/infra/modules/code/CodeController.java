@@ -36,6 +36,21 @@ public class CodeController {
 		service.insert(dto);
 		return "";
 	}
+	
+	@RequestMapping(value = "/code/codeGroupView")
+	public String codeGroupView(CodeVo vo, Model model) throws Exception {
+		
+		System.out.println("vo.getifcgSeq():"+vo.getIfcgSeq());
+		
+		//디비까지 가서 한 건의 데이터 값을 가지고 온다,VO
+		Code rt = service.selectOne(vo);
+		
+		//가지고 온 값을 jsp로 넘겨준다
+		model.addAttribute("item", rt);
+		
+		return "code/codeGroupView";
+	}
+	
 
 
 	
