@@ -66,6 +66,8 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeGroupUpdt")
 	public String codeGroupUpdt(Code dto) throws Exception {
 		
+		System.out.println(dto.getIfcgName());
+		System.out.println(dto.getIfcgSeq());
 		//수정진행
 		service.update(dto);
 		return "";

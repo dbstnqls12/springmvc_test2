@@ -7,5 +7,6 @@
 
 <form method="post" action ="/infra/code/codeGroupUpdt">
 	<input type="text" name="ifcgName" value= <c:out value="${item.ifcgName}"/>>
+	<input type="hidden" name="ifcgSeq" value=<c:out value="${item.ifcgSeq}"/>>
 	<input type="submit" value="제출">
 </form>
