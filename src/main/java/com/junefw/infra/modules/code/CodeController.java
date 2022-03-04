@@ -40,8 +40,6 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeGroupView")
 	public String codeGroupView(CodeVo vo, Model model) throws Exception {
 		
-		System.out.println("vo.getifcgSeq():"+vo.getIfcgSeq());
-		
 		//디비까지 가서 한 건의 데이터 값을 가지고 온다,VO
 		Code rt = service.selectOne(vo);
 		
@@ -54,21 +52,25 @@ public class CodeController {
 	
 //	수정
 	@RequestMapping(value = "/code/codeGroupEditForm")
-	public String codeGroupEditForm(Code vo, Model model) throws Exception {
+	public String codeGroupEditForm(CodeVo vo, Model model) throws Exception {
 	
 		//디비까지 가서 한 건의 데이터값을 가지고 온다.
-		Code rt = service.update(vo);
+		Code rt = service.selectOne(vo);
 		
 		//가지고 온 값을 jsp로 넘겨준다
+		model.addAttribute("item", rt);
+		
 		return "code/codeGroupEditForm";
 	}
 
 	@RequestMapping(value = "/code/codeGroupUpdt")
-	public String codeGroupUpdt(Code dto, Model model) throws Exception {
-
+	public String codeGroupUpdt(Code dto) throws Exception {
+		
 		//수정진행
-		return "code/codeGroupUpdt";
+		service.update(dto);
+		return "";
 	}
+
 	
 
 
