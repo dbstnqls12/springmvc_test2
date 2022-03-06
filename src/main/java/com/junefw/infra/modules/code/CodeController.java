@@ -67,6 +67,7 @@ public class CodeController {
 	public String codeGroupUpdt(Code dto) throws Exception {
 		
 		System.out.println(dto.getIfcgName());
+		System.out.println(dto.getIfcgDelNy());
 		System.out.println(dto.getIfcgSeq());
 		//수정진행
 		service.update(dto);

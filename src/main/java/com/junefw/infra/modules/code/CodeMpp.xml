@@ -16,7 +16,7 @@
 		FROM 
 			infrCodeGroup a
 		WHERE 1=1
-			AND ifcgDelNy=0
+			<!-- AND ifcgDelNy=0 -->
 
 	</select>
 	
@@ -45,6 +45,7 @@
 	<update id="update">
 		UPDATE infrCodeGroup SET	
 			ifcgName=#{ifcgName}
+			,ifcgDelNy=#{ifcgDelNy}
 			
 		WHERE 1=1
 			AND ifcgSeq=#{ifcgSeq}

@@ -6,7 +6,17 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 <form method="post" action ="/infra/code/codeGroupUpdt">
-	<input type="text" name="ifcgName" value= <c:out value="${item.ifcgName}"/>>
+	
+	<label>ifcdName</label>
+	<input type="text" name="ifcgName" value= <c:out value="${item.ifcgName}"/>><br>
+	
+	<label>ifcdDelNy</label>
+	<input type="text" name="ifcgDelNy" value=<c:out value="${item.ifcgDelNy}"/>>
+<!-- 
+	<input type="radio" name="ifcgDelNy" value=1>1
+	<input type="radio" name="ifcgDelNy" value=0>0
+ -->		
+		
 	<input type="hidden" name="ifcgSeq" value=<c:out value="${item.ifcgSeq}"/>>
 	<input type="submit" value="제출">
 </form>
