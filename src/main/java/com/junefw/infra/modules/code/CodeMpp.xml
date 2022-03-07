@@ -16,8 +16,7 @@
 		FROM 
 			infrCodeGroup a
 		WHERE 1=1
-			<!-- AND ifcgDelNy=0 -->
-
+			AND ifcgDelNy=0
 	</select>
 	
 	<insert id="insert">
@@ -49,6 +48,45 @@
 			AND ifcgSeq=#{ifcgSeq}
 
 	</update>
-	
 
+
+	<select id="selectCodeList" resultMap="resultMapObj">
+		SELECT
+			ifcdSeq
+			,ifcdName
+			,ifcdDelNy
+			,ifcgSeq
+			,ifcdOrder
+		FROM 
+			infrCode 
+		WHERE 1=1
+	</select>
+	
+	<insert id="insertCode">
+		INSERT INTO infrCode(
+			ifcdName
+			,ifcdDelNy
+			,ifcdOrder
+			,ifcgSeq
+		) VALUES (
+			#{ifcdName}
+			,0		
+			,#{ifcdOrder}
+			,#{ifcgSeq}
+		)		
+	</insert>
+	
+	<select id="selectCodeOne" resultMap="resultMapObj">
+		SELECT
+			ifcdSeq
+			,ifcdName
+			,ifcdDelNy
+			,ifcgSeq
+			,ifcdOrder
+		FROM 
+			infrCode
+		WHERE 1=1
+			AND ifcdSeq=#{ifcdSeq}
+
+	</select>
 </mapper>

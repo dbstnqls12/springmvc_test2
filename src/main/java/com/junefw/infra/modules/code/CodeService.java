@@ -8,4 +8,8 @@ public interface CodeService {
 	public int insert(Code dto) throws Exception;
 	public Code selectOne(CodeVo vo) throws Exception;
 	public int update(Code dto) throws Exception; 
+	
+	public List<Code> selectCodeList() throws Exception;
+	public int insertCode(Code dto) throws Exception;
+	public Code selectCodeOne(CodeVo vo) throws Exception;	
 }

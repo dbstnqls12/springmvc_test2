@@ -52,7 +52,7 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeGroupForm2")
 	public String codeGroupForm2(CodeVo vo, Model model) throws Exception {
 		
-		//디비까지 가서 한 건의 데이터값을 가지고 온다.
+		//디비까지 가서 한 건의 데이터값을 가지고 온다. 	
 		Code rt = service.selectOne(vo);
 		
 		//가지고 온 값을 jsp로 넘겨준다
@@ -63,17 +63,47 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeGroupUpdt")
 	public String codeGroupUpdt(Code dto) throws Exception {
 		
-		System.out.println(dto.getIfcgName());
 		//수정프로세스 실행
 		service.update(dto);
 		return "";
 	}
 	
-	
+//	code---------------------------------------------------------------
+	@RequestMapping(value = "/code/codeList")
+	public String codeList(Model model) throws Exception {
+		
+		List<Code> list = service.selectCodeList();
+		model.addAttribute("list", list);
+		
+		return "code/codeList";
+	}
 
 
-	
+	@RequestMapping(value = "/code/codeForm")
+	public String codeForm() throws Exception {
+		
+		return "code/codeForm";
+	}
 
+	@RequestMapping(value = "/code/codeInst")
+	public String codeInst(Code dto) throws Exception {
+
+//		입력 실행
+		service.insertCode(dto);
+		return "";
+	}
+
+	@RequestMapping(value = "/code/codeView")
+	public String codeView(CodeVo vo, Model model) throws Exception {
+		
+		//디비까지 가서 한 건의 데이터 값을 가지고 온다,VO
+		Code rt = service.selectCodeOne(vo);
+		
+		//가지고 온 값을 jsp로 넘겨준다
+		model.addAttribute("item", rt);
+		
+		return "code/codeView";
+	}
 
 	
 	
