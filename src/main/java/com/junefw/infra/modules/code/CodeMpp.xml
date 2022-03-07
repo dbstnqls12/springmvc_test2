@@ -43,10 +43,8 @@
 	</select>
 
 	<update id="update">
-		UPDATE infrCodeGroup SET	
-			ifcgName=#{ifcgName}
-			,ifcgDelNy=#{ifcgDelNy}
-			
+		UPDATE infrCodeGroup SET  	
+			ifcgName = #{ifcgName}
 		WHERE 1=1
 			AND ifcgSeq=#{ifcgSeq}
 

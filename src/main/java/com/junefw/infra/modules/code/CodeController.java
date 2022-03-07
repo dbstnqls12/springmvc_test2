@@ -49,30 +49,47 @@ public class CodeController {
 		return "code/codeGroupView";
 	}
 	
-	
-//	수정
-	@RequestMapping(value = "/code/codeGroupEditForm")
-	public String codeGroupEditForm(CodeVo vo, Model model) throws Exception {
-	
+	@RequestMapping(value = "/code/codeGroupForm2")
+	public String codeGroupForm2(CodeVo vo, Model model) throws Exception {
+		
 		//디비까지 가서 한 건의 데이터값을 가지고 온다.
 		Code rt = service.selectOne(vo);
 		
 		//가지고 온 값을 jsp로 넘겨준다
-		model.addAttribute("item", rt);
+		model.addAttribute("rt", rt);
 		
-		return "code/codeGroupEditForm";
+		return "code/codeGroupForm2";
 	}
-
 	@RequestMapping(value = "/code/codeGroupUpdt")
 	public String codeGroupUpdt(Code dto) throws Exception {
-		
-		System.out.println(dto.getIfcgName());
-		System.out.println(dto.getIfcgDelNy());
-		System.out.println(dto.getIfcgSeq());
-		//수정진행
-		service.update(dto);
 		return "";
 	}
+	
+	
+//	------------------------------------------------------------------------------	
+//	수정
+//	@RequestMapping(value = "/code/codeGroupEditForm")
+//	public String codeGroupEditForm(CodeVo vo, Model model) throws Exception {
+//	
+//		//디비까지 가서 한 건의 데이터값을 가지고 온다.
+//		Code rt = service.selectOne(vo);
+//		
+//		//가지고 온 값을 jsp로 넘겨준다
+//		model.addAttribute("item", rt);
+//		
+//		return "code/codeGroupEditForm";
+//	}
+//
+//	@RequestMapping(value = "/code/codeGroupUpdt")
+//	public String codeGroupUpdt(Code dto) throws Exception {
+//		
+////		System.out.println(dto.getIfcgName());
+////		System.out.println(dto.getIfcgDelNy());
+////		System.out.println(dto.getIfcgSeq());
+//		//수정진행
+//		service.update(dto);
+//		return "";
+//	}
 
 	
 
