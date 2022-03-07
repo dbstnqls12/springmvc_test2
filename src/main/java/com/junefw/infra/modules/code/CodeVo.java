@@ -5,7 +5,6 @@ public class CodeVo {
 //	VO
 	private String ifcgSeq;
 
-
 //------------
 	
 	public String getIfcgSeq() {
@@ -14,6 +13,7 @@ public class CodeVo {
 	public void setIfcgSeq(String ifcgSeq) {
 		this.ifcgSeq = ifcgSeq;
 	}
+
 
 	
 

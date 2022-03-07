@@ -11,4 +11,3 @@
 
 
 
-<%-- <button onclick="location='codeGroupEditForm2?ifcgSeq=${item.ifcgSeq}'">수정</button> --%>
