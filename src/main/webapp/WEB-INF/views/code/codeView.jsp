@@ -6,7 +6,9 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 
-<c:out value="${item.ifcdSeq}"/> | <c:out value="${item.ifcgSeq}"/> | <c:out value="${item.ifcdOrder}"/> |<c:out value="${item.ifcdName}"/> | <c:out value="${item.ifcdDelNy}"/><br>
+<c:out value="${item.ifcdSeq}"/> |<c:out value="${item.ifcgSeq}"/> |<c:out value="${item.ifcdOrder}"/> | <c:out value="${item.ifcdName}"/> | <c:out value="${item.ifcdDelNy}"/><br>
 <a href="codeEditForm?ifcdSeq=${item.ifcdSeq}">수정</a>
+<a href="codeForm?ifcdSeq=${item.ifcdSeq}">등록</a>
+
 
 

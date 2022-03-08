@@ -80,7 +80,10 @@ public class CodeController {
 
 
 	@RequestMapping(value = "/code/codeForm")
-	public String codeForm() throws Exception {
+	public String codeForm(Model model) throws Exception {
+		
+		List<Code> list = service.selectList();
+		model.addAttribute("list", list);
 		
 		return "code/codeForm";
 	}
@@ -88,7 +91,6 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeInst")
 	public String codeInst(Code dto) throws Exception {
 
-//		입력 실행
 		service.insertCode(dto);
 		return "";
 	}
@@ -96,10 +98,8 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeView")
 	public String codeView(CodeVo vo, Model model) throws Exception {
 		
-		//디비까지 가서 한 건의 데이터 값을 가지고 온다,VO
 		Code rt = service.selectOneCode(vo);
 		
-		//가지고 온 값을 jsp로 넘겨준다
 		model.addAttribute("item", rt);
 		
 		return "code/codeView";
@@ -108,10 +108,8 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeEditForm")
 	public String codeEditForm(CodeVo vo, Model model) throws Exception {
 		
-		//디비까지 가서 한 건의 데이터값을 가지고 온다. 	
 		Code rt = service.selectOneCode(vo);
 		
-		//가지고 온 값을 jsp로 넘겨준다
 		model.addAttribute("rt", rt);
 		
 		return "code/codeEditForm";
@@ -119,7 +117,6 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeUpdt")
 	public String codeUpdt(Code dto) throws Exception {
 		
-		//수정프로세스 실행
 		service.updateCode(dto);
 		return "";
 	}

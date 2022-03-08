@@ -9,10 +9,12 @@
 	
 	<label>ifcdName</label>
 	<input type="text" name="ifcdName" value= <c:out value="${rt.ifcdName}"/>>
-	<label>ifcdOrder</label>
-	<input type="text" name="ifcdOrder" value= <c:out value="${rt.ifcdOrder}"/>>
+
 	<label>ifcgSeq</label>
-	<input type="text" name="ifcgSeq" value= <c:out value="${rt.ifcgSeq}"/>>
+	<input type="text" name="ifcgSeq" value= <c:out value="${rt.ifcgSeq}"/>>	
+
+	<label>ifcdOrder</label>
+	<input type="text" name="ifcdOrder" value= <c:out value="${rt.ifcdOrder}"/>>	
 	
 	<input type="hidden" name="ifcdSeq" value=<c:out value="${rt.ifcdSeq}"/>>
 	<input type="submit" value="제출">
