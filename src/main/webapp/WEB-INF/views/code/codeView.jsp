@@ -7,6 +7,6 @@
 
 
 <c:out value="${item.ifcdSeq}"/> | <c:out value="${item.ifcgSeq}"/> | <c:out value="${item.ifcdOrder}"/> |<c:out value="${item.ifcdName}"/> | <c:out value="${item.ifcdDelNy}"/><br>
-<a href="codeForm2?ifcdSeq=${item.ifcdSeq}">수정</a>
+<a href="codeEditForm?ifcdSeq=${item.ifcdSeq}">수정</a>
 
 

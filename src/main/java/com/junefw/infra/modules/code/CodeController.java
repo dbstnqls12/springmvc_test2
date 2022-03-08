@@ -104,7 +104,25 @@ public class CodeController {
 		
 		return "code/codeView";
 	}
-
+	
+	@RequestMapping(value = "/code/codeEditForm")
+	public String codeEditForm(CodeVo vo, Model model) throws Exception {
+		
+		//디비까지 가서 한 건의 데이터값을 가지고 온다. 	
+		Code rt = service.selectCodeOne(vo);
+		
+		//가지고 온 값을 jsp로 넘겨준다
+		model.addAttribute("rt", rt);
+		
+		return "code/codeGroupForm2";
+	}
+	@RequestMapping(value = "/code/codeUpdt")
+	public String codeUpdt(Code dto) throws Exception {
+		
+		//수정프로세스 실행
+		service.updateCode(dto);
+		return "";
+	}
 	
 	
 }

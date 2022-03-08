@@ -5,14 +5,15 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<form method="post" action ="/infra/code/codeGroupUpdt">
+<form method="post" action ="/infra/code/codeUpdt">
 	
 	<label>ifcdName</label>
-	<input type="text" name="ifcgName" value= <c:out value="${item.ifcgName}"/>><br>
+	<input type="text" name="ifcgName" value= <c:out value="${rt.ifcdName}"/>><br>
+	<label>ifcdOrder</label>
+	<input type="text" name="ifcdOrder" value= <c:out value="${rt.ifcdOrder}"/>><br>
+	<label>ifcgSeq</label>
+	<input type="text" name="ifcgSeq" value= <c:out value="${rt.ifcgSeq}"/>><br>
 	
-	<label>ifcdDelNy</label>
-	<input type="text" name="ifcgDelNy" value=<c:out value="${item.ifcgDelNy}"/>>	
-		
-	<input type="hidden" name="ifcgSeq" value=<c:out value="${item.ifcgSeq}"/>>
+	<input type="hidden" name="ifcdSeq" value=<c:out value="${rt.ifcdSeq}"/>>
 	<input type="submit" value="제출">
 </form>

@@ -87,6 +87,15 @@
 			infrCode
 		WHERE 1=1
 			AND ifcdSeq=#{ifcdSeq}
-
 	</select>
+	
+	<update id="updateCode">
+		UPDATE infrGroup SET 	
+			ifcdName = #{ifcdName}
+			,ifcdOrder = #{ifcgOrder}
+			,ifcgSeq = #{ifcgSeq}
+		WHERE 1=1
+			AND ifcdSeq=#{ifcdSeq}
+	</update>
+	
 </mapper>

@@ -3,9 +3,10 @@ package com.junefw.infra.modules.code;
 public class CodeVo {
 	
 //	VO
-	private String ifcgSeq;
+	private String ifcgSeq;	
 	
 	private String ifcdSeq;
+	
 
 //------------
 	
