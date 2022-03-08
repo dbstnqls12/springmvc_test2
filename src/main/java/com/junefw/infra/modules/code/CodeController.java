@@ -114,7 +114,7 @@ public class CodeController {
 		//가지고 온 값을 jsp로 넘겨준다
 		model.addAttribute("rt", rt);
 		
-		return "code/codeGroupForm2";
+		return "code/codeEditForm";
 	}
 	@RequestMapping(value = "/code/codeUpdt")
 	public String codeUpdt(Code dto) throws Exception {

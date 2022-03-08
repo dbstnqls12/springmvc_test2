@@ -8,11 +8,11 @@
 <form method="post" action ="/infra/code/codeUpdt">
 	
 	<label>ifcdName</label>
-	<input type="text" name="ifcgName" value= <c:out value="${rt.ifcdName}"/>><br>
+	<input type="text" name="ifcdName" value= <c:out value="${rt.ifcdName}"/>>
 	<label>ifcdOrder</label>
-	<input type="text" name="ifcdOrder" value= <c:out value="${rt.ifcdOrder}"/>><br>
+	<input type="text" name="ifcdOrder" value= <c:out value="${rt.ifcdOrder}"/>>
 	<label>ifcgSeq</label>
-	<input type="text" name="ifcgSeq" value= <c:out value="${rt.ifcgSeq}"/>><br>
+	<input type="text" name="ifcgSeq" value= <c:out value="${rt.ifcgSeq}"/>>
 	
 	<input type="hidden" name="ifcdSeq" value=<c:out value="${rt.ifcdSeq}"/>>
 	<input type="submit" value="제출">

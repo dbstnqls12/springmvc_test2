@@ -28,6 +28,8 @@ public class CodeDao {
 	
 	public int update(Code dto) { return sqlSession.update(namespace+".update", dto); }
 	
+	
+	
 	public List<Code> selectCodeList(){
 		List<Code> list = sqlSession.selectList(namespace + ".selectCodeList","");
 		return list;

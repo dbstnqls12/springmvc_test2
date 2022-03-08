@@ -90,9 +90,9 @@
 	</select>
 	
 	<update id="updateCode">
-		UPDATE infrGroup SET 	
+		UPDATE infrCode SET 	
 			ifcdName = #{ifcdName}
-			,ifcdOrder = #{ifcgOrder}
+			,ifcdOrder = #{ifcdOrder}
 			,ifcgSeq = #{ifcgSeq}
 		WHERE 1=1
 			AND ifcdSeq=#{ifcdSeq}
