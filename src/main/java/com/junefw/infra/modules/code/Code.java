@@ -3,14 +3,18 @@ package com.junefw.infra.modules.code;
 public class Code {
 	
 //	DTO
+	
+//	infrCodeGroup
 	private String ifcgSeq;
 	private String ifcgName;
 	private Integer ifcgDelNy;
 	
+//	infrCode
 	private String ifcdSeq;
 	private String ifcdName;
 	private Integer ifcdDelNy;
 	private Integer ifcdOrder;
+//	private String ifcgSeq;
 	
 
 //------------

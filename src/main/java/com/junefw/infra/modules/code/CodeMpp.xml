@@ -8,6 +8,8 @@
 
     <resultMap id="resultMapObj" type="com.junefw.infra.modules.code.Code"></resultMap> <!-- 결과 객체 저장 -->
 
+	<!-- infrCodeGroup -->
+
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
 			a.ifcgSeq
@@ -50,7 +52,9 @@
 	</update>
 
 
-	<select id="selectCodeList" resultMap="resultMapObj">
+	<!-- infrCode -->
+	
+	<select id="selectListCode" resultMap="resultMapObj">
 		SELECT
 			ifcdSeq
 			,ifcdName
@@ -76,7 +80,7 @@
 		)		
 	</insert>
 	
-	<select id="selectCodeOne" resultMap="resultMapObj">
+	<select id="selectOneCode" resultMap="resultMapObj">
 		SELECT
 			ifcdSeq
 			,ifcdName

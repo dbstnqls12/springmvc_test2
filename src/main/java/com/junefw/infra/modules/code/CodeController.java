@@ -72,7 +72,7 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeList")
 	public String codeList(Model model) throws Exception {
 		
-		List<Code> list = service.selectCodeList();
+		List<Code> list = service.selectListCode();
 		model.addAttribute("list", list);
 		
 		return "code/codeList";
@@ -97,7 +97,7 @@ public class CodeController {
 	public String codeView(CodeVo vo, Model model) throws Exception {
 		
 		//디비까지 가서 한 건의 데이터 값을 가지고 온다,VO
-		Code rt = service.selectCodeOne(vo);
+		Code rt = service.selectOneCode(vo);
 		
 		//가지고 온 값을 jsp로 넘겨준다
 		model.addAttribute("item", rt);
@@ -109,7 +109,7 @@ public class CodeController {
 	public String codeEditForm(CodeVo vo, Model model) throws Exception {
 		
 		//디비까지 가서 한 건의 데이터값을 가지고 온다. 	
-		Code rt = service.selectCodeOne(vo);
+		Code rt = service.selectOneCode(vo);
 		
 		//가지고 온 값을 jsp로 넘겨준다
 		model.addAttribute("rt", rt);

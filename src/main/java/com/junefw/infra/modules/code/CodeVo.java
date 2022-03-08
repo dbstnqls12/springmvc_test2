@@ -3,8 +3,11 @@ package com.junefw.infra.modules.code;
 public class CodeVo {
 	
 //	VO
+	
+//	infrCodeGroup
 	private String ifcgSeq;	
 	
+//	infrCode
 	private String ifcdSeq;
 	
 

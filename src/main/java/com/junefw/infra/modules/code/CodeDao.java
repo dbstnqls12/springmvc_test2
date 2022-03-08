@@ -28,16 +28,16 @@ public class CodeDao {
 	
 	public int update(Code dto) { return sqlSession.update(namespace+".update", dto); }
 	
+//	infrCode------------------------------------------------------------------------------------------
 	
-	
-	public List<Code> selectCodeList(){
-		List<Code> list = sqlSession.selectList(namespace + ".selectCodeList","");
+	public List<Code> selectListCode(){
+		List<Code> list = sqlSession.selectList(namespace + ".selectListCode","");							//뭉티기?로 리턴
 		return list;
 	}
 	
-	public int insertCode(Code dto) { return sqlSession.insert(namespace+".insertCode", dto); }
+	public int insertCode(Code dto) { return sqlSession.insert(namespace+".insertCode", dto); }				//영향을 미친 row값을 넘김
 	
-	public Code selectCodeOne(CodeVo vo) { return sqlSession.selectOne(namespace + ".selectCodeOne", vo);}
+	public Code selectOneCode(CodeVo vo) { return sqlSession.selectOne(namespace + ".selectOneCode", vo);}	//객체로 리턴
 
-	public int updateCode(Code dto) { return sqlSession.update(namespace+".updateCode", dto); }
+	public int updateCode(Code dto) { return sqlSession.update(namespace+".updateCode", dto); }				//영향을 미친 row값을 넘김
 }

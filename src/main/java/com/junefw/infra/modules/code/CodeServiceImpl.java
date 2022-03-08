@@ -30,10 +30,12 @@ public class CodeServiceImpl implements CodeService{
 	public int update(Code dto) throws Exception {
 		return dao.update(dto);
 	}
-
+	
+//	infrcode---------------------------------------------------
+	
 	@Override
-	public List<Code> selectCodeList() throws Exception {
-		return dao.selectCodeList();
+	public List<Code> selectListCode() throws Exception {
+		return dao.selectListCode();
 	}
 
 	@Override
@@ -42,8 +44,8 @@ public class CodeServiceImpl implements CodeService{
 	}
 
 	@Override
-	public Code selectCodeOne(CodeVo vo) throws Exception {
-		return dao.selectCodeOne(vo);
+	public Code selectOneCode(CodeVo vo) throws Exception {
+		return dao.selectOneCode(vo);
 	}
 
 	@Override
