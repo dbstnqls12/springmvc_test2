@@ -6,7 +6,7 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 
-<c:out value="${item.kbmmSeq}"/> | <c:out value="${item.kbmmId}"/> | <c:out value="${item.kbmmName}"/> | <c:out value="${item.kbmmPassword}"/> | <c:out value="${item.kbmmAdminNy}"/> <br>
+<c:out value="${item.kbmmSeq}"/> | <c:out value="${item.kbmmName}"/> | <c:out value="${item.kbmmId}"/> | <c:out value="${item.kbmmPassword}"/> | <c:out value="${item.kbmmAdminNy}"/> <br>
 
 
 <a href="memberEditForm?kbmmSeq=${item.kbmmSeq}">수정</a>

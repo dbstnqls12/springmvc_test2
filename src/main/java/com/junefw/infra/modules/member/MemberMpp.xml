@@ -37,10 +37,14 @@
 			insert into kbMember(
 				kbmmId
 				,kbmmName
+				,kbmmPassword
 				,kbmmDelNy
+				,kbmmAdminNy
 			) values(
 				#{kbmmId}
 				,#{kbmmName}
+				,#{kbmmPassword}
+				,0
 				,0
 			)
 	</insert>	

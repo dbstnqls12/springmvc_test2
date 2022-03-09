@@ -6,7 +6,9 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 <form method="post" action ="/infra/member/memberInst">
-	<input type="text" name="kbmmId" placeholder="아이디">
 	<input type="text" name="kbmmName" placeholder="이름">
+	<input type="text" name="kbmmId" placeholder="아이디">
+	<input type="password" name="kbmmPassword" placeholder="비밀번호">
+	
 	<input type="submit" value="제출">
 </form>
