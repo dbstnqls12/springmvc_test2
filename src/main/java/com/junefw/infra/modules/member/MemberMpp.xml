@@ -10,13 +10,16 @@
 
 	<select id="selectList" resultMap="resultMapObj">
 			select
-				kbmmSeq
-				,kbmmId
-				,kbmmName
-				,kbmmPassword
-				,kbmmAdminNy
+				a.kbmmSeq
+				,a.kbmmId
+				,a.kbmmName
+				,a.kbmmPassword
+				,a.kbmmAdminNy
+				,select b.ifcdName from infrCode b where b.ifcgSeq=3 and b.ifcdOrder = a.kbmmGenderCd 
+				,c.kbmpNumberFull
 			from
-				kbMember 
+				kbMember a
+			left join kbMemberPhone c on c.kbmmSeq = a.kbmmSeq	
 	</select>
 
 	<select id="selectOne" resultMap="resultMapObj">
@@ -40,12 +43,14 @@
 				,kbmmPassword
 				,kbmmDelNy
 				,kbmmAdminNy
+				,kbmmGenderCd
 			) values(
 				#{kbmmId}
 				,#{kbmmName}
 				,#{kbmmPassword}
 				,0
 				,0
+				,#{kbmmGenderCd}
 			)
 	</insert>	
 	<update id="update">

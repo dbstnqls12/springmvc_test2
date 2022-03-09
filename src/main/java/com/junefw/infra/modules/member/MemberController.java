@@ -7,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.junefw.infra.modules.code.Code;
-import com.junefw.infra.modules.code.CodeVo;
-
 @Controller
 public class MemberController {
 
@@ -39,6 +36,7 @@ public class MemberController {
 				
 		return "";
 	}
+	
 	@RequestMapping(value = "/member/memberView")
 	public String memberView(MemberVo vo, Model model) throws Exception {
 		
@@ -48,6 +46,7 @@ public class MemberController {
 		
 		return "member/memberView";
 	}
+	
 	@RequestMapping(value = "/member/memberEditForm")
 	public String memberEditForm(MemberVo vo, Model model) throws Exception {
 		
@@ -57,6 +56,7 @@ public class MemberController {
 		
 		return "member/memberEditForm";
 	}
+	
 	@RequestMapping(value = "/member/memberUpdt")
 	public String memberUpdt(Member dto) throws Exception {
 		

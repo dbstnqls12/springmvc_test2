@@ -2,9 +2,6 @@ package com.junefw.infra.modules.member;
 
 import java.util.List;
 
-import com.junefw.infra.modules.code.Code;
-import com.junefw.infra.modules.code.CodeVo;
-
 public interface MemberService {
 	
 	public List<Member> selectList() throws Exception; 
