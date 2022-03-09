@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.junefw.infra.modules.code.Code;
+import com.junefw.infra.modules.code.CodeVo;
+
 @Controller
 public class MemberController {
 
@@ -15,7 +18,6 @@ public class MemberController {
 
 	
 	@RequestMapping(value = "/member/memberList")
-//	public String memberList(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 	public String memberList(Model model) throws Exception {
 
 		List<Member> list = service.selectList();
@@ -37,6 +39,29 @@ public class MemberController {
 				
 		return "";
 	}
-	
+	@RequestMapping(value = "/member/memberView")
+	public String memberView(MemberVo vo, Model model) throws Exception {
+		
+		Member rt = service.selectOne(vo);
+		
+		model.addAttribute("item", rt);
+		
+		return "member/memberView";
+	}
+	@RequestMapping(value = "/member/memberEditForm")
+	public String memberEditForm(MemberVo vo, Model model) throws Exception {
+		
+		Member rt = service.selectOne(vo);
+		
+		model.addAttribute("rt", rt);
+		
+		return "member/memberEditForm";
+	}
+	@RequestMapping(value = "/member/memberUpdt")
+	public String memberUpdt(Member dto) throws Exception {
+		
+		service.update(dto);
+		return "";
+	}
 	
 }

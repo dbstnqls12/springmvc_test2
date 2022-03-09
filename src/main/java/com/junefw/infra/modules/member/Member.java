@@ -7,7 +7,10 @@ public class Member {
 	private String kbmmSeq;
 	private String kbmmId;
 	private String kbmmName;
+	private String kbmmPassword;
+	private Integer kbmmAdminNy;
 	private Integer kbmmDelNy;
+
 //------------
 	public String getKbmmSeq() {
 		return kbmmSeq;
@@ -33,6 +36,19 @@ public class Member {
 	public void setKbmmDelNy(Integer kbmmDelNy) {
 		this.kbmmDelNy = kbmmDelNy;
 	}
+	public Integer getKbmmAdminNy() {
+		return kbmmAdminNy;
+	}
+	public void setKbmmAdminNy(Integer kbmmAdminNy) {
+		this.kbmmAdminNy = kbmmAdminNy;
+	}
+	public String getKbmmPassword() {
+		return kbmmPassword;
+	}
+	public void setKbmmPassword(String kbmmPassword) {
+		this.kbmmPassword = kbmmPassword;
+	}
+	
 	
 
 }

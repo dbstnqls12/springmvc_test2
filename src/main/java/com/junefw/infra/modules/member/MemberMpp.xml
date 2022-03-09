@@ -11,10 +11,26 @@
 	<select id="selectList" resultMap="resultMapObj">
 			select
 				kbmmSeq
-				, kbmmId
-				, kbmmName
+				,kbmmId
+				,kbmmName
+				,kbmmPassword
+				,kbmmAdminNy
 			from
-				kbMember
+				kbMember 
+	</select>
+
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			kbmmSeq
+			,kbmmAdminNy
+			,kbmmId
+			,kbmmName
+			,kbmmPassword
+		FROM 
+			kbMember 
+		WHERE 1=1
+			AND kbmmSeq=#{kbmmSeq}
+
 	</select>
 	
 	<insert id="insert" >
@@ -27,5 +43,13 @@
 				,#{kbmmName}
 				,0
 			)
-	</insert>
+	</insert>	
+	<update id="update">
+		UPDATE kbMember SET 	
+			kbmmName = #{kbmmName}
+			,kbmmId = #{kbmmId}
+			,kbmmPassword = #{kbmmPassword}
+		WHERE 1=1
+			AND kbmmSeq=#{kbmmSeq}
+	</update>
 </mapper>
