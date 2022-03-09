@@ -15,11 +15,11 @@
 				,a.kbmmName
 				,a.kbmmPassword
 				,a.kbmmAdminNy
-				,select b.ifcdName from infrCode b where b.ifcgSeq=3 and b.ifcdOrder = a.kbmmGenderCd 
-				,c.kbmpNumberFull
+				,a.kbmmGenderCd
+				<!-- ,c.kbmpNumberFull -->
 			from
 				kbMember a
-			left join kbMemberPhone c on c.kbmmSeq = a.kbmmSeq	
+			<!-- left join kbMemberPhone c on c.kbmmSeq = a.kbmmSeq	 -->
 	</select>
 
 	<select id="selectOne" resultMap="resultMapObj">
@@ -29,6 +29,7 @@
 			,kbmmId
 			,kbmmName
 			,kbmmPassword
+			,kbmmGenderCd
 		FROM 
 			kbMember 
 		WHERE 1=1
@@ -53,6 +54,7 @@
 				,#{kbmmGenderCd}
 			)
 	</insert>	
+	
 	<update id="update">
 		UPDATE kbMember SET 	
 			kbmmName = #{kbmmName}
