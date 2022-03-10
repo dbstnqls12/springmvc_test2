@@ -12,5 +12,7 @@
 	성별 : <input type="radio" name="kbmmGenderCd" value="1">남
 	<input type="radio" name="kbmmGenderCd" value="2">여
 	<input type="radio" name="kbmmGenderCd" value="3">기타<br>
+<%-- 	전화번호 : <input type="text" name="kbmpNumberFull" placeholder="번호만 입력">--%>
+
 	<input type="submit" value="제출">
 </form>

@@ -9,17 +9,23 @@
     <resultMap id="resultMapObj" type="com.junefw.infra.modules.member.Member"></resultMap>
 
 	<select id="selectList" resultMap="resultMapObj">
-			select
-				a.kbmmSeq
-				,a.kbmmId
-				,a.kbmmName
-				,a.kbmmPassword
-				,a.kbmmAdminNy
-				,a.kbmmGenderCd
-				<!-- ,c.kbmpNumberFull -->
-			from
-				kbMember a
-			<!-- left join kbMemberPhone c on c.kbmmSeq = a.kbmmSeq	 -->
+		select
+			a.kbmmSeq
+			,a.kbmmId
+			,a.kbmmName
+			,a.kbmmPassword
+			,a.kbmmAdminNy
+			,a.kbmmGenderCd
+	<!-- 		,(select b.ifcdName from infrCode b where a.ifmmGenderCd = ifcdSeq) as ifmmGenderCd -->
+			,c.kbmpNumberFull
+			,d.kbmeEmailFull
+			,e.kbmaAddress1
+			,e.kbmaAddress2
+		from
+			kbMember a
+		left join kbMemberPhone c on c.kbmmSeq = a.kbmmSeq	
+		left join kbMemberEmail d on c.kbmmSeq = d.kbmmSeq
+		left join kbMemberAddress e on c.kbmmSeq = e.kbmmSeq
 	</select>
 
 	<select id="selectOne" resultMap="resultMapObj">
@@ -34,7 +40,6 @@
 			kbMember 
 		WHERE 1=1
 			AND kbmmSeq=#{kbmmSeq}
-
 	</select>
 	
 	<insert id="insert" >
@@ -53,6 +58,7 @@
 				,0
 				,#{kbmmGenderCd}
 			)
+	
 	</insert>	
 	
 	<update id="update">

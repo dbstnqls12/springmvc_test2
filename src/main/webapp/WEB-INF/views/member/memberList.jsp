@@ -17,7 +17,9 @@
 		<c:forEach items="${list}" var="item" varStatus="status">	
 
 		<c:out value="${item.kbmmSeq}"/> | <a href="/infra/member/memberView?kbmmSeq=${item.kbmmSeq}"><c:out value="${item.kbmmName}"/></a> | <c:out value="${item.kbmmId}"/> |
-		<c:out value="${item.kbmmPassword}"/> | <c:out value="${item.kbmmAdminNy}"/> | <c:out value="${item.kbmmGenderCd}"/> <br>
+		<c:out value="${item.kbmmPassword}"/> | <c:out value="${item.kbmmAdminNy}"/> | <c:out value="${item.kbmmGenderCd}"/> | <c:out value="${item.kbmpNumberFull}"/>
+		 | <c:out value="${item.kbmeEmailFull}"/> | <c:out value="${item.kbmaAddress1}"/> <c:out value="${item.kbmaAddress2}"/> <br>
+		  
 		
 		</c:forEach>
 		<a href="memberForm">등록</a>

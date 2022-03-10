@@ -11,6 +11,10 @@ public class Member {
 	private Integer kbmmAdminNy;
 	private Integer kbmmDelNy;
 	private Integer kbmmGenderCd;
+	private String kbmpNumberFull;
+	private String kbmeEmailFull;
+	private String kbmaAddress1;
+	private String kbmaAddress2;
 
 
 //------------
@@ -56,6 +60,32 @@ public class Member {
 	public void setKbmmGenderCd(Integer kbmmGenderCd) {
 		this.kbmmGenderCd = kbmmGenderCd;
 	}
+	public String getKbmpNumberFull() {
+		return kbmpNumberFull;
+	}
+	public void setKbmpNumberFull(String kbmpNumberFull) {
+		this.kbmpNumberFull = kbmpNumberFull;
+	}
+	public String getKbmeEmailFull() {
+		return kbmeEmailFull;
+	}
+	public void setKbmeEmailFull(String kbmeEmailFull) {
+		this.kbmeEmailFull = kbmeEmailFull;
+	}
+	public String getKbmaAddress1() {
+		return kbmaAddress1;
+	}
+	public void setKbmaAddress1(String kbmaAddress1) {
+		this.kbmaAddress1 = kbmaAddress1;
+	}
+	public String getKbmaAddress2() {
+		return kbmaAddress2;
+	}
+	public void setKbmaAddress2(String kbmaAddress2) {
+		this.kbmaAddress2 = kbmaAddress2;
+	}
+
+	
 
 	
 	
