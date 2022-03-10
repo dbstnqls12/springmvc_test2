@@ -34,7 +34,7 @@ public class CodeController {
 
 //		입력 실행
 		service.insert(dto);
-		return "";
+		return "redirect:/code/codeGroupList";
 	}
 	
 	@RequestMapping(value = "/code/codeGroupView")
@@ -65,7 +65,7 @@ public class CodeController {
 		
 		//수정프로세스 실행
 		service.update(dto);
-		return "";
+		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq();
 	}
 	
 //	code---------------------------------------------------------------
@@ -92,7 +92,7 @@ public class CodeController {
 	public String codeInst(Code dto) throws Exception {
 
 		service.insertCode(dto);
-		return "";
+		return "redirect:/code/codeList";
 	}
 
 	@RequestMapping(value = "/code/codeView")
@@ -118,7 +118,7 @@ public class CodeController {
 	public String codeUpdt(Code dto) throws Exception {
 		
 		service.updateCode(dto);
-		return "";
+		return "redirect:/code/codeView?ifcdSeq="+dto.getIfcdSeq();
 	}
 	
 	
