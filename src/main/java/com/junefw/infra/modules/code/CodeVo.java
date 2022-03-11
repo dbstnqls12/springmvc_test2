@@ -11,8 +11,9 @@ public class CodeVo {
 	
 //	infrCode
 	private String ifcdSeq;
-	private String shIfcgSeq;
 
+//	infrCode Search
+	private String shIfcgSeq;
 
 //------------
 	
@@ -47,7 +48,7 @@ public class CodeVo {
 	public void setShIfcgSeq(String shIfcgSeq) {
 		this.shIfcgSeq = shIfcgSeq;
 	}
-	
+
 
 	
 

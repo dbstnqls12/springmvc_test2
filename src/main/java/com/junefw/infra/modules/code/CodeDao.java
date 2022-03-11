@@ -31,7 +31,7 @@ public class CodeDao {
 //	infrCode------------------------------------------------------------------------------------------
 	
 	public List<Code> selectListCode(CodeVo vo){
-		List<Code> list = sqlSession.selectList(namespace + ".selectListCode",vo);							//뭉티기?로 리턴
+		List<Code> list = sqlSession.selectList(namespace + ".selectListCode",vo);						
 		return list;
 	}
 	
