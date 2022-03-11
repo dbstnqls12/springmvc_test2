@@ -23,7 +23,6 @@
 				<when test="shIfcgDelNy == 0">AND ifcgDelNy=0</when>
 			</choose>
 			<if test="shIfcgName != null and !shIfcgName.equals('')"> AND ifcgName LIKE concat('%', #{shIfcgName}, '%')</if> 
-
 	</select>
 	
 	<insert id="insert">
