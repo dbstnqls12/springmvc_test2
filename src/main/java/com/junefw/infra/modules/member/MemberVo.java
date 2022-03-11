@@ -4,6 +4,7 @@ public class MemberVo {
 
 	private String kbmmSeq;
 
+
 	public String getKbmmSeq() {
 		return kbmmSeq;
 	}
@@ -11,6 +12,9 @@ public class MemberVo {
 	public void setKbmmSeq(String kbmmSeq) {
 		this.kbmmSeq = kbmmSeq;
 	}
+
+
+	
 	
 	
 }

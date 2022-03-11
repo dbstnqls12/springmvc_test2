@@ -23,9 +23,11 @@
 			,e.kbmaAddress2
 		from
 			kbMember a
-		left join kbMemberPhone c on c.kbmmSeq = a.kbmmSeq	
-		left join kbMemberEmail d on c.kbmmSeq = d.kbmmSeq
-		left join kbMemberAddress e on c.kbmmSeq = e.kbmmSeq
+			left join kbMemberPhone c on c.kbmmSeq = a.kbmmSeq	
+			left join kbMemberEmail d on c.kbmmSeq = d.kbmmSeq
+			left join kbMemberAddress e on c.kbmmSeq = e.kbmmSeq
+		WHERE 1=1
+
 	</select>
 
 	<select id="selectOne" resultMap="resultMapObj">

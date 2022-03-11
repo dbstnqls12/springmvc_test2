@@ -10,7 +10,7 @@
 
 	<select name="ifcgSeq">
 		<c:forEach items="${list}" var="item" varStatus="status">	
-			<option value="<c:out value="${item.ifcgSeq}"/>"><c:out value="${item.ifcgSeq}"/> | <c:out value="${item.ifcgName}"/>    </option>
+			<option value="<c:out value="${item.ifcgSeq}"/>"><c:out value="${item.ifcgSeq}"/> | <c:out value="${item.ifcgName}"/></option>
 		</c:forEach>
 	</select>
 
