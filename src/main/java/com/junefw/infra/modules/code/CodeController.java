@@ -86,8 +86,8 @@ public class CodeController {
 	public String codeForm(CodeVo vo, Model model) throws Exception {
 		
 		List<Code> list = service.selectListCode(vo);
-		
 		model.addAttribute("list", list);
+		
 		List<Code> listCodeGroup = service.selectList(vo);
 		model.addAttribute("listCodeGroup", listCodeGroup);
 		
