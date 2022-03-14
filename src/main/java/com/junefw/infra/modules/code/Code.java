@@ -7,6 +7,7 @@ public class Code {
 //	infrCodeGroup
 	private String ifcgSeq;
 	private String ifcgName;
+	private String ifcgNameEng;
 	private Integer ifcgDelNy;
 	
 //	infrCode
@@ -37,7 +38,12 @@ public class Code {
 	public void setIfcgDelNy(Integer ifcgDelNy) {
 		this.ifcgDelNy = ifcgDelNy;
 	}
-	
+	public String getIfcgNameEng() {
+		return ifcgNameEng;
+	}
+	public void setIfcgNameEng(String ifcgNameEng) {
+		this.ifcgNameEng = ifcgNameEng;
+	}
 	
 	
 	
@@ -67,6 +73,7 @@ public class Code {
 	public void setIfcdOrder(Integer ifcdOrder) {
 		this.ifcdOrder = ifcdOrder;
 	}
+
 	
 	
 	
