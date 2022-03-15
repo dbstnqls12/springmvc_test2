@@ -95,7 +95,7 @@
 			,ifcgSeq
 			,ifcdOrder
 		<include refid="selectCommonCode"/>	
-		limit #{rowNumToShow}, #{startRnumForMysql} 
+		limit #{startRnumForMysql}, #{rowNumToShow} 
 	</select>
 	
 	<insert id="insertCode">
