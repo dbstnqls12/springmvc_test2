@@ -90,12 +90,13 @@ public class CodeController {
 			
 			List<Code> list = service.selectListCode(vo);
 			model.addAttribute("list", list);
-			 
+			
 			List<Code> listCodeGroup = service.selectList(vo);
-			model.addAttribute("listCodeGroup", listCodeGroup);
+			model.addAttribute("listCodeGroup", listCodeGroup);			 
 		}else {
 			//by pass
 		}
+
 		return "code/codeList";
 	}
 
