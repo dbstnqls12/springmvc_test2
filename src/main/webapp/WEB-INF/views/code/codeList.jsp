@@ -34,7 +34,7 @@ codelist
 	</c:otherwise>
 </c:choose>	
 </form>
-<nav aria-label="...">
+<!-- <nav aria-label="...">
   <ul class="pagination">
     <li class="page-item disabled"><a class="page-link">Previous</a></li>
     <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -44,7 +44,7 @@ codelist
   </ul>
 </nav>
 <nav aria-label="...">
-  <ul class="pagination">
+  <ul class="pagination"> -->
 
  
 <c:if test="${vo.startPage gt vo.pageNumToShow}">
