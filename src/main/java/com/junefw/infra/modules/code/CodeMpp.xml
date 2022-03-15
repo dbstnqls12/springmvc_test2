@@ -38,6 +38,7 @@
 			,a.ifcgNameEng
 			,a.ifcgDelNy
 		<include refid="selectCommon"/>	
+		limit #{startRnumForMysql}, #{rowNumToShow} 
 	</select>
 	
 	<insert id="insert">
