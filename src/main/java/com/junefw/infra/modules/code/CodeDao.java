@@ -25,7 +25,7 @@ public class CodeDao {
 	public int update(Code dto) { return sqlSession.update(namespace+".update", dto); }
 	
 //	infrCode------------------------------------------------------------------------------------------
-	public int selectOneCodeCount(CodeVo vo) { return sqlSession.selectOne(namespace + ".selectOneCodeCount", vo);}
+	public int selectOneCountCode(CodeVo vo) { return sqlSession.selectOne(namespace+".selectOneCountCode", vo); }	
 	public List<Code> selectListCode(CodeVo vo){List<Code> list = sqlSession.selectList(namespace + ".selectListCode",vo); return list;}
 	public int insertCode(Code dto) { return sqlSession.insert(namespace+".insertCode", dto); }				//영향을 미친 row값을 넘김
 	public Code selectOneCode(CodeVo vo) { return sqlSession.selectOne(namespace + ".selectOneCode", vo);}	//객체로 리턴

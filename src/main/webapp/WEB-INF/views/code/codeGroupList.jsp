@@ -36,8 +36,6 @@
 		
 		<c:out value="${item.ifcgSeq}"/> | <a href="/infra/code/codeGroupView?ifcgSeq=${item.ifcgSeq}"><c:out value="${item.ifcgName}"/></a> | <c:out value="${item.ifcgNameEng}"/></a> | <c:out value="${item.ifcgDelNy}"/> <br>
 		
-		
-		
 		</c:forEach>
 	</c:otherwise>
 
@@ -49,20 +47,22 @@
 
  
 <c:if test="${vo.startPage gt vo.pageNumToShow}">
-                <li class="page-item"><a class="page-link" href="/infra/code/codeGroupList?thisPage=${vo.startPage - 1}">Previous</a></li>
+	<li class="page-item"><a class="page-link" href="/infra/code/codeGroupList?thisPage=${vo.startPage - 1}">Previous</a></li>
 </c:if>
+
  <c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
 	<c:choose>
 		<c:when test="${i.index eq vo.thisPage}">
-                <li class="page-item active"><a class="page-link" href="/infra/code/codeGroupList?thisPage=${i.index}">${i.index}</a></li>
+			<li class="page-item active"><a class="page-link" href="/infra/code/codeGroupList?thisPage=${i.index}">${i.index}</a></li>
 		</c:when>
 		<c:otherwise>             
-                <li class="page-item"><a class="page-link" href="/infra/code/codeGroupList?thisPage=${i.index}">${i.index}</a></li>
+			<li class="page-item"><a class="page-link" href="/infra/code/codeGroupList?thisPage=${i.index}">${i.index}</a></li>
 		</c:otherwise>
 	</c:choose>
 </c:forEach>  
+
 <c:if test="${vo.endPage ne vo.totalPages}">                
-                <li class="page-item"><a class="page-link" href="/infra/code/codeGroupList?thisPage=${vo.endPage + 1}">Next</a></li>
+	<li class="page-item"><a class="page-link" href="/infra/code/codeGroupList?thisPage=${vo.endPage + 1}">Next</a></li>
 </c:if>  
 
 

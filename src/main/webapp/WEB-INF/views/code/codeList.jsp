@@ -27,8 +27,6 @@ codelist
 		<c:forEach items="${list}" var="item" varStatus="status">	
 		
 	 	<c:out value="${item.ifcdSeq}"/> | <c:out value="${item.ifcgSeq}"/> | <c:out value="${item.ifcdOrder}"/> | <a href="/infra/code/codeView?ifcdSeq=${item.ifcdSeq}"><c:out value="${item.ifcdName}"/></a> | <c:out value="${item.ifcdDelNy}"/>  <br>
-		 
-		
 		
 		</c:forEach>
 	</c:otherwise>
@@ -37,33 +35,24 @@ codelist
 
 <nav aria-label="...">
   <ul class="pagination">
-<c:if test="${vo.startPage gt vo.pageNumToShow}">
-                <li class="page-item"><a class="page-link" href="/infra/code/codeList?thisPage=${vo.startPage - 1}">Previous</a></li>
-</c:if>
- <c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
-	<c:choose>
-		<c:when test="${i.index eq vo.thisPage}">
-                <li class="page-item active"><a class="page-link" href="/infra/code/codeList?thisPage=${i.index}">${i.index}</a></li>
-		</c:when>
-		<c:otherwise>             
-                <li class="page-item"><a class="page-link" href="/infra/code/codeList?thisPage=${i.index}">${i.index}</a></li>
-		</c:otherwise>
-	</c:choose>
-</c:forEach>     
-<c:if test="${vo.endPage ne vo.totalPages}">                
-                <li class="page-item"><a class="page-link" href="/infra/code/codeList?thisPage=${vo.endPage + 1}">Next</a></li>
-</c:if> 
+    <c:if test="${vo.startPage gt vo.pageNumToShow}">
+		<li class="page-item"><a class="page-link" href="/infra/code/codeList?thisPage=${vo.startPage - 1}">Previous</a></li>
+	</c:if>
+     <c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
+		<c:choose>
+			<c:when test="${i.index eq vo.thisPage}">
+				<li class="page-item active"><a class="page-link" href="/infra/code/codeList?thisPage=${i.index}">${i.index}</a></li>
+			</c:when>
+			<c:otherwise>             
+				<li class="page-item"><a class="page-link" href="/infra/code/codeList?thisPage=${i.index}">${i.index}</a></li>
+			</c:otherwise>
+		</c:choose>
+	</c:forEach>  
+    <c:if test="${vo.endPage ne vo.totalPages}">                
+		<li class="page-item"><a class="page-link" href="/infra/code/codeList?thisPage=${vo.endPage + 1}">Next</a></li>
+	</c:if>  
+
   </ul>
 </nav>
 
- 
-<%-- <nav aria-label="...">
-  <ul class="pagination">
-
-
- 
-
-
-  </ul>
-</nav> --%>
 

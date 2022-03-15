@@ -38,7 +38,7 @@
 			,a.ifcgNameEng
 			,a.ifcgDelNy
 		<include refid="selectCommon"/>	
-		limit #{startRnumForMysql}, #{rowNumToShow} 
+		limit #{startRnumForMysql}, #{rowNumToShow}
 	</select>
 	
 	<insert id="insert">
@@ -81,7 +81,7 @@
 			<if test="shIfcgSeq != null and !shIfcgSeq.equals('')"> AND ifcgSeq = #{shIfcgSeq}</if> 
 	</sql>
 	
-	<select id="selectOneCodeCount" resultType="Integer">
+	<select id="selectOneCountCode" resultType="Integer">
 		SELECT
 			count(*)
 		<include refid="selectCommonCode"/>	
@@ -95,14 +95,14 @@
 			,ifcgSeq
 			,ifcdOrder
 		<include refid="selectCommonCode"/>	
-		limit #{startRnumForMysql}, #{rowNumToShow} 
+		limit #{startRnumForMysql}, #{rowNumToShow}
 	</select>
 	
 	<insert id="insertCode">
 		INSERT INTO infrCode(
 			ifcdName
 			,ifcdDelNy
-			,ifcdOrder
+			,ifcdOrder-
 			,ifcgSeq
 		) VALUES (
 			#{ifcdName}
