@@ -73,6 +73,19 @@
 
 
 	<!-- infrCode -->
+	<sql id="selectCommonCode">
+		FROM 
+			infrCode 
+		WHERE 1=1
+			AND ifcdDelNy = 0
+			<if test="shIfcgSeq != null and !shIfcgSeq.equals('')"> AND ifcgSeq = #{shIfcgSeq}</if> 
+	</sql>
+	
+	<select id="selectOneCodeCount" resultType="Integer">
+		SELECT
+			count(*)
+		<include refid="selectCommonCode"/>	
+	</select>
 	
 	<select id="selectListCode" resultMap="resultMapObj">
 		SELECT
@@ -81,11 +94,8 @@
 			,ifcdDelNy
 			,ifcgSeq
 			,ifcdOrder
-		FROM 
-			infrCode 
-		WHERE 1=1
-			AND ifcdDelNy = 0
-			<if test="shIfcgSeq != null and !shIfcgSeq.equals('')"> AND ifcgSeq = #{shIfcgSeq}</if> 
+		<include refid="selectCommonCode"/>	
+		
 	</select>
 	
 	<insert id="insertCode">

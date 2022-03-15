@@ -80,13 +80,24 @@ public class CodeController {
 	
 //	infrCode---------------------------------------------------------------
 	@RequestMapping(value = "/code/codeList")
-	public String codeList(CodeVo vo, Model model) throws Exception {
+	public String codeList(@ModelAttribute CodeVo vo, Model model) throws Exception {
 		
-		List<Code> list = service.selectListCode(vo);
-		model.addAttribute("list", list);
-
-		List<Code> listCodeGroup = service.selectList(vo);
-		model.addAttribute("listCodeGroup", listCodeGroup);
+		//count가져올 것
+		int count = service.selectOneCodeCount(vo);
+		
+		vo.setParamsPaging(count);
+		
+		if(count!=0) {
+			
+			List<Code> list = service.selectListCode(vo);
+			model.addAttribute("list", list);
+			
+			List<Code> listCodeGroup = service.selectList(vo);
+			model.addAttribute("listCodeGroup", listCodeGroup);
+		}else {
+			//
+		}
+		
 		
 		return "code/codeList";
 	}
