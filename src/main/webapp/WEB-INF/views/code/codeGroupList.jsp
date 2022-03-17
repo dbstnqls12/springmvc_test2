@@ -9,21 +9,22 @@
 
 <form id="" name="" method="get" action="/infra/code/codeGroupList">
 
-<select name="shIfcgDelNy">
+<select name="shIfcgDelNy" id="shIfcgDelNy">
 	<option value="">::삭제여부::</option>
 	<option value="1">Y</option>
 	<option value="0">N</option>
 </select>
 ||
-코드 이름 : <input type="text" name="shIfcgName">
+코드그룹 이름 : <input type="text" name="shIfcgName" id="shIfcgName">
 ||
-<select name="shOption">
+<select name="shOption" id="shOption">
 	<option value="">::검색구분::</option>
 	<option value="1">한글</option>
 	<option value="2">영문</option>
 </select>
-<input type="text" name="shValue">
-<input type="submit" name="search">
+<input type="text" name="shValue" id="shValue">
+<input type="submit" id="btnSubmit" name="search">
+<input type="submit" id="btnSubmit2" name="search">
 <br>
 <c:choose>
 	<c:when test="${fn:length(list) eq 0}">
@@ -62,7 +63,50 @@
 	<c:if test="${vo.endPage ne vo.totalPages}">                
 		<li class="page-item"><a class="page-link" href="/infra/code/codeGroupList?thisPage=${vo.endPage + 1}">Next</a></li>
 	</c:if>  
-	
-	
 	</ul>
 </nav>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/infra/resources/js/validation.js"></script>
+
+<script type="text/javascript">
+	$("#btnSubmit").on("click",function(){
+		
+		if(!checkNull($("#shIfcgName"), $("#shIfcgName").val(), " 코드그룹 이름을 입력해주세요!")) return false;
+		if(!checkNull($("#shValue"), $("#shValue").val(), " 검색어를 입력해주세요!")) return false;			
+
+	});
+	
+	$("#btnSubmit2").on("click",function(){
+		
+		alert("2번째 버튼입니다!")
+
+	});
+
+	
+	/*
+	$("#btnSubmit").on("click",function(){
+		
+ 		if($("#shIfcgName").val() == "" || $("#shIfcgName").val() == null){
+		alert("null이다.");
+		$("#shIfcgName").focus();
+	} */
+	
+/*		alert($("#shOption").val()); 
+	alert("shIfcgName : " + $("#shIfcgName").val()); 						//jquery방식
+	alert("javascript : " + document.getElementById("shIfcgName").value); 	//javascript방식
+	
+	alert("shIfcgDelNy : " + $("#shIfcgDelNy").val());		 				
+	alert("shIfcgName : " + $("#shIfcgName").val());
+	$("#shIfcgName").val(2);
+	alert("shIfcgName : " + $("#shIfcgName").val());
+	$("#shIfcgName").val("Tony");
+	alert("shIfcgName : " + $("#shIfcgName").val());						
+	 alert("shOption : " + $("#shOption").val()); 							
+	 alert("shValue : " + $("#shValue").val());		
+
+	});
+	
+	
+*/	
+</script>
