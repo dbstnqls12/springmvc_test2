@@ -91,7 +91,7 @@ public class CodeController {
 			List<Code> list = service.selectListCode(vo);
 			model.addAttribute("list", list);
 			
-			List<Code> listCodeGroup = service.selectList(vo);
+			List<Code> listCodeGroup = service.selectListCodeGroup(vo);
 			model.addAttribute("listCodeGroup", listCodeGroup);			 
 		}else {
 			//by pass
@@ -107,7 +107,7 @@ public class CodeController {
 		List<Code> list = service.selectListCode(vo);
 		model.addAttribute("list", list);
 		
-		List<Code> listCodeGroup = service.selectList(vo);
+		List<Code> listCodeGroup = service.selectListCodeGroup(vo);
 		model.addAttribute("listCodeGroup", listCodeGroup);
 		
 		return "code/codeForm";

@@ -23,8 +23,8 @@
 	<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>영문</option>
 </select>
 <input type="text" name="shValue" id="shValue" value="<c:out value="${vo.shValue}"/>">
-<input type="submit" id="btnSubmit" name="search">
-<input type="submit" id="btnSubmit2" name="search">
+<input type="submit" id="btnSubmit" name="btnSubmit">
+<input type="submit" id="btnSubmit2" name="btnSubmit2">
 <br>
 <c:choose>
 	<c:when test="${fn:length(list) eq 0}">

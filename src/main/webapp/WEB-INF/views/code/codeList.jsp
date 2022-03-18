@@ -52,7 +52,7 @@ codelist
 	</c:forEach>  
 	
 	<c:if test="${vo.endPage ne vo.totalPages}">                
-		<li class="page-item"><a class="page-link" href="/code/codeList?thisPage=${vo.endPage + 1}">Next</a></li>
+		<li class="page-item"><a class="page-link" href="/infra/code/codeList?thisPage=${vo.endPage + 1}">Next</a></li>
 	</c:if>  
 	
 	</ul>
