@@ -46,7 +46,10 @@
 		) VALUES (
 			#{ifcgName}
 			,0		
-		)		
+		)	
+		<selectKey resultType="String" keyProperty="ifcgSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>	
 	</insert>
 	
 	<select id="selectOne" resultMap="resultMapObj">
@@ -100,7 +103,7 @@
 		INSERT INTO infrCode(
 			ifcdName
 			,ifcdDelNy
-			,ifcdOrder-
+			,ifcdOrder
 			,ifcgSeq
 		) VALUES (
 			#{ifcdName}

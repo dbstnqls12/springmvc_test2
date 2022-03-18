@@ -12,6 +12,9 @@ public class CodeServiceImpl implements CodeService{
 	CodeDao dao;
 
 //	infrCodeGroup
+	
+//	insert, update, delete는 service에서 하는것
+	
 	@Override
 	public int selectOneCount(CodeVo vo) throws Exception {
 		return dao.selectOneCount(vo);
@@ -24,7 +27,9 @@ public class CodeServiceImpl implements CodeService{
 
 	@Override
 	public int insert(Code dto) throws Exception {
-		return dao.insert(dto);
+		dao.insert(dto);		//ifcgName, ifcdName
+		dao.insertCode(dto);	//ifcgName, ifcdName, ifcgSeq
+		return 1;
 	}
 
 	@Override
