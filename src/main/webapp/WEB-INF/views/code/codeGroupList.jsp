@@ -72,8 +72,8 @@
 <script type="text/javascript">
 	$("#btnSubmit").on("click",function(){
 		
-		if(!checkNull($("#shIfcgName"), $("#shIfcgName").val(), " 코드그룹 이름을 입력해주세요!")) return false;
-		if(!checkNull($("#shValue"), $("#shValue").val(), " 검색어를 입력해주세요!")) return false;			
+		if(!checkNull($("#shIfcgName"), $("#shIfcgName").val(), "코드그룹 이름을 입력해주세요!")) return false;
+		if(!checkNull($("#shValue"), $("#shValue").val(), "검색어를 입력해주세요!")) return false;			
 
 	});
 	

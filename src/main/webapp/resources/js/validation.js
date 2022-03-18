@@ -2,7 +2,7 @@
 
 checkNull = function(obj, value, message){
 	if(value == "" || value == null){
-		alert("validation.js"+message);
+		alert(message);
 		obj.focus();
 		return false;
 	}else{
