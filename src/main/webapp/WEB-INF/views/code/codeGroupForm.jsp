@@ -18,10 +18,8 @@
 	
 $("#btnSubmit").on("click",function(){
 	
- 	if(!checkNull($("#ifcgName"), $("#ifcgName").val(), "코드그룹 이름을 입력해주세요!")) return false;
- 	if(!checkNull($("#ifcdName"), $("#ifcdName").val(), "코드그룹 이름을 입력해주세요!")) return false;
-	
- 	
+ 	if(!checkNull($("#ifcgName"), $("#ifcgName").val(), "코드그룹을 입력해주세요!")) return false;
+ 	if(!checkNull($("#ifcdName"), $("#ifcdName").val(), "코드를 입력해주세요!")) return false;
  		
 });
 
