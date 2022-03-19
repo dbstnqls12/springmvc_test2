@@ -69,7 +69,6 @@
 			infrCodeGroup a
 		WHERE 1=1
 			AND ifcgSeq=#{ifcgSeq}
-
 	</select>
 
 	<update id="update">
