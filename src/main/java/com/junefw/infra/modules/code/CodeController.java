@@ -45,14 +45,19 @@ public class CodeController {
 	@RequestMapping(value = "/code/codeGroupInst")
 	public String codeGroupInst(Code dto) throws Exception {
 
-//		입력 실행
 		service.insert(dto);
-		return "redirect:/code/codeGroupList";
+		
+		System.out.println(dto.getIfcgSeq());
+		
+		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq();
 	}
 	
 	@RequestMapping(value = "/code/codeGroupView")
-	public String codeGroupView(CodeVo vo, Model model) throws Exception {
+	public String codeGroupView(@ModelAttribute("vo") CodeVo vo, Model model) throws Exception {
 		
+		System.out.println(vo.getShOption());		
+		System.out.println(vo.getShValue());		
+
 		//디비까지 가서 한 건의 데이터 값을 가지고 온다,VO
 		Code rt = service.selectOne(vo);
 		
@@ -79,6 +84,7 @@ public class CodeController {
 	}
 	
 //	infrCode---------------------------------------------------------------
+	
 	@RequestMapping(value = "/code/codeList")
 	public String codeList(@ModelAttribute("vo") CodeVo vo, Model model) throws Exception {
 			
