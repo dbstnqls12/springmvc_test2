@@ -37,19 +37,19 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value = "/code/codeGroupForm")
-	public String codeGroupForm() throws Exception {
+	public String codeGroupForm(@ModelAttribute("vo") CodeVo vo) throws Exception {
 		
 		return "code/codeGroupForm";
 	}
 
 	@RequestMapping(value = "/code/codeGroupInst")
-	public String codeGroupInst(Code dto) throws Exception {
+	public String codeGroupInst(CodeVo vo, Code dto) throws Exception {
 
 		service.insert(dto);
 		
 		System.out.println(dto.getIfcgSeq());
 		
-		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq();
+		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq()+"&shOption="+vo.getShOption()+"&shValue="+vo.getShValue();
 	}
 	
 	@RequestMapping(value = "/code/codeGroupView")
@@ -57,6 +57,7 @@ public class CodeController {
 		
 		System.out.println(vo.getShOption());		
 		System.out.println(vo.getShValue());		
+		System.out.println(vo.getThisPage());		
 
 		//디비까지 가서 한 건의 데이터 값을 가지고 온다,VO
 		Code rt = service.selectOne(vo);
