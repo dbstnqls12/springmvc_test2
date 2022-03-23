@@ -58,4 +58,4 @@ codelist
 	</ul>
 </nav>
 
-
+<a href="/infra/code/codeForm?thisPage=<c:out value="${vo.thisPage}"/>&shIfcgSeq=<c:out value="${vo.shIfcgSeq}"/>">등록</a>
