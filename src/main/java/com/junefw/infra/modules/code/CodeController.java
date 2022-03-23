@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class CodeController {
@@ -43,13 +44,19 @@ public class CodeController {
 	}
 
 	@RequestMapping(value = "/code/codeGroupInst")
-	public String codeGroupInst(CodeVo vo, Code dto) throws Exception {
+	public String codeGroupInst(CodeVo vo, Code dto, RedirectAttributes redirectAttributes) throws Exception {
 
 		service.insert(dto);
 		
 		System.out.println(dto.getIfcgSeq());
 		
-		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq()+"&thisPage="+vo.getThisPage()+"&shOption="+vo.getShOption()+"&shValue="+vo.getShValue();
+		redirectAttributes.addAttribute("ifcgSeq", dto.getIfcgSeq());	//get방식으로 넘어감
+		redirectAttributes.addAttribute("thisPage", vo.getThisPage());
+		redirectAttributes.addAttribute("shOption", vo.getShOption());
+		redirectAttributes.addAttribute("shValue", vo.getShValue());
+		
+		return "redirect:/code/codeGroupView";	
+//		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq() + makeQueryString(vo);
 	}
 	
 	@RequestMapping(value = "/code/codeGroupView")
@@ -81,7 +88,14 @@ public class CodeController {
 	public String codeGroupUpdt(CodeVo vo, Code dto) throws Exception {
 		
 		service.update(dto);
-		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq()+"&thisPage="+vo.getThisPage()+"&shOption="+vo.getShOption()+"&shValue="+vo.getShValue();
+		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq() + makeQueryString(vo);
+	}
+	
+	public String makeQueryString(CodeVo vo) {
+		String tmp = "&thisPage=" + vo.getThisPage()
+					+ "&shOption=" + vo.getShOption()
+					+ "&shValue=" + vo.getShValue();
+		return tmp;
 	}
 	
 //	infrCode---------------------------------------------------------------
