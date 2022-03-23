@@ -49,7 +49,7 @@ public class CodeController {
 		
 		System.out.println(dto.getIfcgSeq());
 		
-		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq()+"&shOption="+vo.getShOption()+"&shValue="+vo.getShValue();
+		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq()+"&thisPage="+vo.getThisPage()+"&shOption="+vo.getShOption()+"&shValue="+vo.getShValue();
 	}
 	
 	@RequestMapping(value = "/code/codeGroupView")
@@ -69,7 +69,7 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value = "/code/codeGroupForm2")
-	public String codeGroupForm2(CodeVo vo, Model model) throws Exception {
+	public String codeGroupForm2(@ModelAttribute("vo") CodeVo vo, Model model) throws Exception {
 		
 		Code rt = service.selectOne(vo);
 		
@@ -78,10 +78,10 @@ public class CodeController {
 		return "code/codeGroupForm2";
 	}
 	@RequestMapping(value = "/code/codeGroupUpdt")
-	public String codeGroupUpdt(Code dto) throws Exception {
+	public String codeGroupUpdt(CodeVo vo, Code dto) throws Exception {
 		
 		service.update(dto);
-		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq();
+		return "redirect:/code/codeGroupView?ifcgSeq="+dto.getIfcgSeq()+"&thisPage="+vo.getThisPage()+"&shOption="+vo.getShOption()+"&shValue="+vo.getShValue();
 	}
 	
 //	infrCode---------------------------------------------------------------
