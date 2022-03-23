@@ -9,6 +9,7 @@
 	<input type="hidden" name="thisPage" id="thisPage" value="<c:out value="${vo.thisPage}"/>" >
 	<input type="hidden" name="shValue" id="shValue" value="<c:out value="${vo.shValue}"/>" >
 	<input type="hidden" name="shOption" id="shOption" value="<c:out value="${vo.shOption}"/>" >
+	<input type="hidden" name="shIfcgName" id="shIfcgName" value="<c:out value="${vo.shIfcgName}"/>" >
 	<input type="text" name="ifcgName" id="ifcgName" value="<c:out value="${item.ifcgName}"/>" placeholder="코드그룹">
 <%-- 	<input type="text" name="ifcdName" id="ifcdName" value="<c:out value="${item.ifcdName}"/>" placeholder="코드"> --%>
 	<input type="submit" name="btnSubmit" id="btnSubmit" value="제출"><br>
