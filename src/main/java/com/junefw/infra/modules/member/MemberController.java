@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.junefw.infra.modules.code.CodeServiceImpl;
+
 @Controller
 public class MemberController {
 
@@ -27,6 +29,10 @@ public class MemberController {
 	@RequestMapping(value = "/member/memberForm")
 	public String memberForm(Model model) throws Exception {
 
+		
+		model.addAttribute("CodeGender", CodeServiceImpl.selectListCachedCode("3"));
+		model.addAttribute("CodeTelecom", CodeServiceImpl.selectListCachedCode("10"));
+		
 		return "member/memberForm";
 	}
 	
