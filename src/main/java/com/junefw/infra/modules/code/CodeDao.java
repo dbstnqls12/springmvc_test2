@@ -33,4 +33,6 @@ public class CodeDao {
 	public int insertCode(Code dto) { return sqlSession.insert(namespace+".insertCode", dto); }				//영향을 미친 row값을 넘김
 	public Code selectOneCode(CodeVo vo) { return sqlSession.selectOne(namespace + ".selectOneCode", vo);}	//객체로 리턴
 	public int updateCode(Code dto) { return sqlSession.update(namespace+".updateCode", dto); }				//영향을 미친 row값을 넘김
+	
+	public List<Code> selectListForCache(){List<Code> list = sqlSession.selectList(namespace + ".selectListForCache",""); return list;}
 }

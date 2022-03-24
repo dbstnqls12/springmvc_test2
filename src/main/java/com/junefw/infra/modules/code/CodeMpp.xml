@@ -152,4 +152,19 @@
 			AND ifcdSeq=#{ifcdSeq}
 	</update>
 	
+	<select id="selectListForCache" resultMap="resultMapObj">
+		SELECT
+			ifcdSeq
+			,ifcdName
+		<!-- 	,ifcdDelNy -->
+			,ifcgSeq
+		<!-- 	,ifcdOrder -->
+		FROM 
+			infrCode
+		WHERE 1=1
+			AND ifcdDelNy = 0
+			AND ifcdUseNy = 1
+			
+	</select>
+	
 </mapper>
