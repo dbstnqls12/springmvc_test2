@@ -2,6 +2,8 @@ package com.junefw.infra.modules.member;
 
 public class MemberVo {
 
+	
+	
 	private String kbmmSeq;
 
 
